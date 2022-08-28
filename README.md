@@ -1,3 +1,4 @@
-### GitHub Page link:
+### Practice API links:
 
-To see the Calculator live [Click Here!](https://rayhanalkavey.github.io/calculator/ "Click Here!")
+- Json Placeholder pracrice API: [Click Here!](https://jsonplaceholder.typicode.com/ "Click Here!")
+- Kanye rendom quote generator: [Click Here!](https://api.kanye.rest/ "Click Here!")
