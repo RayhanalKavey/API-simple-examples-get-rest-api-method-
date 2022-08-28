@@ -5,4 +5,13 @@
 }
 body {
   font-family: "Lora", serif;
+  background-color: rgb(222, 162, 162);
+}
+.center {
+  text-align: center;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
 }

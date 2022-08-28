@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator!</title>
+    <title>Examples!</title>
     <!-- Favicon -->
     <link rel="import" href="media/img/fav.png" />
-    <!--LinKs   Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!--LinKs   Tailwind bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
     <!--LinKs Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,143 +22,15 @@
       rel="stylesheet"
     />
     <!--LinKs CSS -->
-    <link rel="stylesheet" href="#" />
+    <link rel="stylesheet" href="css/general.css" />
   </head>
   <body>
-    <main class="text-slate-50 h-screen flex items-center justify-center">
-      <section class="w-5/6 sm:max-w-lg">
-        <!-- SectioN Display start -->
-        <div
-          class="display w-5/6 m-auto text-lg font-semibold text-slate-50 grid grid-cols-3 grid-rows-4 rounded-t-lg overflow-hidden bg-stone-800"
-        >
-          <div class="dis-1 p-3 col-span-3 justify-self-end">0</div>
-          <div
-            class="dis-2 p-3 text-7xl col-span-3 row-span-2 self-center justify-self-end"
-          >
-            0
-          </div>
-
-          <div class="dis-3 p-3 col-span-3 justify-self-start">0</div>
-        </div>
-        <!-- SectioN Display end -->
-
-        <!-- SectioN Button  start-->
-        <div
-          class="w-5/6 h-80 m-auto text-lg font-semibold text-slate-50 grid grid-cols-4 grid-rows-5 rounded-b-lg overflow-hidden"
-        >
-          <!-- ParT|1| first 4 button start -->
-          <button
-            class="clear-all bg-slate-500 p-3 hover:bg-slate-600 border border-x-0 border-t-0 border-slate-800"
-          >
-            C
-          </button>
-          <button
-            class="clear-last bg-slate-500 p-3 hover:bg-slate-600 border border-t-0 border-r-0 border-slate-800"
-          >
-            Del
-          </button>
-          <button
-            class="operation bg-orange-400 p-3 hover:bg-orange-500 border border-t-0 border-r-0 border-slate-800"
-          >
-            +/-
-          </button>
-          <button
-            class="operation bg-orange-400 p-3 hover:bg-orange-500 border border-t-0 border-r-0 border-slate-800"
-          >
-            %
-          </button>
-          <!-- ParT|2| second 4 button start -->
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-x-0 border-t-0 border-slate-800"
-          >
-            7
-          </button>
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-t-0 border-r-0 border-slate-800"
-          >
-            8
-          </button>
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-t-0 border-r-0 border-slate-800"
-          >
-            9
-          </button>
-          <button
-            class="operation bg-orange-400 p-3 hover:bg-orange-500 border border-t-0 border-r-0 border-slate-800"
-          >
-            /
-          </button>
-
-          <!-- SectioN Display start-->
-          <!-- ParT|3| second 4 button start -->
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-x-0 border-t-0 border-slate-800"
-          >
-            4
-          </button>
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-t-0 border-r-0 border-slate-800"
-          >
-            5
-          </button>
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-t-0 border-r-0 border-slate-800"
-          >
-            6
-          </button>
-          <button
-            class="operation bg-orange-400 p-3 hover:bg-orange-500 border border-t-0 border-r-0 border-slate-800"
-          >
-            *
-          </button>
-
-          <!-- ParT|4| second 4 button start -->
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-x-0 border-t-0 border-slate-800"
-          >
-            1
-          </button>
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-t-0 border-r-0 border-slate-800"
-          >
-            2
-          </button>
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-t-0 border-r-0 border-slate-800"
-          >
-            3
-          </button>
-          <button
-            class="operation bg-orange-400 p-3 hover:bg-orange-500 border border-t-0 border-r-0 border-slate-800"
-          >
-            -
-          </button>
-          <!-- ParT|5| second 4 button start -->
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-x-0 border-t-0 border-slate-800"
-          >
-            0
-          </button>
-          <button
-            class="number bg-slate-400 p-3 hover:bg-slate-600 border border-t-0 border-r-0 border-slate-800"
-          >
-            .
-          </button>
-          <button
-            class="equal bg-slate-400 p-3 hover:bg-slate-600 border border-t-0 border-r-0 border-slate-800"
-          >
-            =
-          </button>
-          <button
-            class="operation bg-orange-400 p-3 hover:bg-orange-500 border border-t-0 border-r-0 border-slate-800"
-          >
-            +
-          </button>
-        </div>
-        <!-- SectioN Button  end-->
-      </section>
-    </main>
+    <!-- bootstrap LinKs  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
     <!-- LinKs JS  -->
-    <script src="js/utilities.js"></script>
   </body>
 </html>
