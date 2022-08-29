@@ -8,3 +8,5 @@
 
 - Rest Country Information API: [Click Here!](https://restcountries.com/#api-endpoints-v3-all "Click Here!")
 - The mealdb (access to adding meals and images) API: [Click Here!](https://www.themealdb.com/api.php "Click Here!")
+
+- Catch error system and load user with Async, await
