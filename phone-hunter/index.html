@@ -26,9 +26,10 @@
   </head>
   <body>
     <header>
-      <h1>Welcome to Phone Hunter!</h1>
+      <h1 class="text-center">Welcome to Phone Hunter!</h1>
     </header>
     <main class="container">
+      <!-- Search area  -->
       <section>
         <div class="mb-3 w-50">
           <label for="exampleFormControlInput1" class="form-label"
@@ -49,6 +50,26 @@
           id="phone-container"
           class="row row-cols-1 row-cols-md-3 g-4"
         ></div>
+        <!-- Warning text if no result found -->
+        <div id="no-phone-text" class="mt-4 d-none">
+          <h2 class="text-danger">
+            No Phone found!😞 Please try a new search. 😊
+          </h2>
+        </div>
+      </section>
+      <section>
+        <!-- Spinner -->
+
+        <div
+          id="spinner"
+          style="height: 75vh"
+          class="d-flex justify-content-center align-items-center text-secondary d-none"
+        >
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <!--  -->
       </section>
     </main>
     <!-- bootstrap LinKs  -->

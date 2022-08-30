@@ -7,7 +7,18 @@ const loadPhone = async (searchText) => {
 const displayPhone = (phones) => {
   const phoneContainer = document.getElementById("phone-container");
   phoneContainer.innerHTML = "";
+  //Display 5 Phones only
+  //No phone display
+  const noResult = document.getElementById("no-phone-text");
+  if (phones.length === 0) {
+    phones = phones.slice(0, 6);
+    noResult.classList.remove("d-none");
+  } else {
+    noResult.classList.add("d-none");
+  }
+  //Phone display
   phones.forEach((phone) => {
+    // noResult.classList.add("d-none");
     const { brand, phone_name, slug, image } = phone;
     const phoneDiv = document.createElement("div");
     phoneDiv.classList.add("col");
@@ -26,11 +37,25 @@ const displayPhone = (phones) => {
     `;
     phoneContainer.appendChild(phoneDiv);
   });
-  console.log(phones);
+  // stop spinner
+  toggleSpinner(false);
+  //------
 };
 ///Search btn click
 document.getElementById("btn-search").addEventListener("click", function () {
+  // start spinner
+  toggleSpinner(true);
+  //------
   const searchField = document.getElementById("search-feild");
   const searchFieldValue = searchField.value;
   loadPhone(searchFieldValue);
 });
+///toggle spinner
+const toggleSpinner = (isLoading) => {
+  const spinner = document.getElementById("spinner");
+  if (isLoading) {
+    spinner.classList.remove("d-none");
+  } else {
+    spinner.classList.add("d-none");
+  }
+};
