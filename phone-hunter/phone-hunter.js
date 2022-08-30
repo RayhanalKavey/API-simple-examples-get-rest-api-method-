@@ -8,10 +8,17 @@ const displayPhone = (phones) => {
   const phoneContainer = document.getElementById("phone-container");
   phoneContainer.innerHTML = "";
   //Display 5 Phones only
+  const showAllBtn = document.getElementById("show-all");
+  if (phones.length > 6) {
+    phones = phones.slice(0, 6);
+    showAllBtn.classList.remove("d-none");
+  } else {
+    showAllBtn.classList.add("d-none");
+  }
+
   //No phone display
   const noResult = document.getElementById("no-phone-text");
   if (phones.length === 0) {
-    phones = phones.slice(0, 6);
     noResult.classList.remove("d-none");
   } else {
     noResult.classList.add("d-none");
