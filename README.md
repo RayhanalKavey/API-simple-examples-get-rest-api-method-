@@ -12,3 +12,5 @@
 6. Catch error system and load user with Async, await
 7. Open Library API (finding books and books related information) API: [Click Here!](https://openlibrary.org/developers/api "Click Here!")
 8. Phone search: [Click Here!](https://openapi.programming-hero.com/api/phones?search=iphone "Click Here!")
+
+   - Website link for phone search. Loading data from phone search API. [Click Here!](https://rayhanalkavey.github.io/API-simple-examples-get-rest-api-method-/ "Click Here!")
