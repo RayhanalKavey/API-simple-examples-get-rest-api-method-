@@ -1,31 +1,31 @@
-const loadPhone = async (searchText) => {
+//SectioN load All the phone
+const loadPhone = async (searchText, dataLimit) => {
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
   const res = await fetch(url);
   const data = await res.json();
-  displayPhone(data.data);
+  displayPhone(data.data, dataLimit);
 };
-const displayPhone = (phones) => {
+///SectioN Display phone to the UI
+const displayPhone = (phones, dataLimit) => {
   const phoneContainer = document.getElementById("phone-container");
   phoneContainer.innerHTML = "";
-  //Display 5 Phones only
+  //ParT Display 6 Phones only
   const showAllBtn = document.getElementById("show-all");
-  if (phones.length > 6) {
+  if (dataLimit && phones.length > 6) {
     phones = phones.slice(0, 6);
     showAllBtn.classList.remove("d-none");
   } else {
     showAllBtn.classList.add("d-none");
   }
-
-  //No phone display
+  //ParT No phone display
   const noResult = document.getElementById("no-phone-text");
   if (phones.length === 0) {
     noResult.classList.remove("d-none");
   } else {
     noResult.classList.add("d-none");
   }
-  //Phone display
+  //ParT Phone display
   phones.forEach((phone) => {
-    // noResult.classList.add("d-none");
     const { brand, phone_name, slug, image } = phone;
     const phoneDiv = document.createElement("div");
     phoneDiv.classList.add("col");
@@ -48,16 +48,22 @@ const displayPhone = (phones) => {
   toggleSpinner(false);
   //------
 };
-///Search btn click
-document.getElementById("btn-search").addEventListener("click", function () {
+//SectioN process search
+const processSearch = (dataLimit) => {
   // start spinner
   toggleSpinner(true);
   //------
   const searchField = document.getElementById("search-feild");
   const searchFieldValue = searchField.value;
-  loadPhone(searchFieldValue);
+  loadPhone(searchFieldValue, dataLimit);
+};
+
+///SectioN Search btn click then load All the phone
+document.getElementById("btn-search").addEventListener("click", function () {
+  processSearch(6);
 });
-///toggle spinner
+
+///SectioN toggle spinner
 const toggleSpinner = (isLoading) => {
   const spinner = document.getElementById("spinner");
   if (isLoading) {
@@ -66,3 +72,8 @@ const toggleSpinner = (isLoading) => {
     spinner.classList.add("d-none");
   }
 };
+
+//SectioN Add click to show-all btn. (this is the third best way to add show all phones, because of the limitations of the API link.)
+document.getElementById("btn-show-all").addEventListener("click", function () {
+  processSearch();
+});
