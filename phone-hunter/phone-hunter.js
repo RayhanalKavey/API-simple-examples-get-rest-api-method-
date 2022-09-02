@@ -41,7 +41,8 @@ const displayPhone = (phones, dataLimit) => {
                   lead-in to additional content. This content is a little bit
                   longer.
                 </p>
-                    <button href="#" onclick="loadShowDetails('${slug}')" class="btn btn-primary">Show details</button>
+                    <button href="#" onclick="loadShowDetails('${slug}')" class="btn btn-primary" data-bs-toggle="modal"
+          data-bs-target="#phoneDetailModal">Show details</button>
 
               </div>
             </div>
@@ -66,6 +67,14 @@ const processSearch = (dataLimit) => {
 document.getElementById("btn-search").addEventListener("click", function () {
   processSearch(6);
 });
+//ParT press enter
+document
+  .getElementById("search-feild")
+  .addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      processSearch(6);
+    }
+  });
 
 ///SectioN toggle spinner
 const toggleSpinner = (isLoading) => {
@@ -91,5 +100,16 @@ const loadShowDetails = (id) => {
 };
 const displayShowDetails = (phone) => {
   const { brand, image, mainFeatures, name, releaseDate } = phone;
+
   const { chipSet, displaySize, storage, sensors } = mainFeatures;
+  const modalTitle = document.getElementById("phoneDetailModalLabel");
+  modalTitle.innerText = name;
+  const phoneDetails = document.getElementById("phone-details");
+
+  phoneDetails.innerHTML = `
+<img src="${image}" alt="">
+<p>${releaseDate ? releaseDate : "No release date found."}</p>
+<p>${sensors}</p>
+<p>${chipSet}</p>
+  `;
 };
