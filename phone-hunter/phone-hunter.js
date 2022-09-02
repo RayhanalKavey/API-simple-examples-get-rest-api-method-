@@ -5,6 +5,7 @@ const loadPhone = async (searchText, dataLimit) => {
   const data = await res.json();
   displayPhone(data.data, dataLimit);
 };
+loadPhone("apple");
 ///SectioN Display phone to the UI
 const displayPhone = (phones, dataLimit) => {
   const phoneContainer = document.getElementById("phone-container");
@@ -27,6 +28,7 @@ const displayPhone = (phones, dataLimit) => {
   //ParT Phone display
   phones.forEach((phone) => {
     const { brand, phone_name, slug, image } = phone;
+    // console.log(slug);
     const phoneDiv = document.createElement("div");
     phoneDiv.classList.add("col");
     phoneDiv.innerHTML = `
@@ -39,6 +41,8 @@ const displayPhone = (phones, dataLimit) => {
                   lead-in to additional content. This content is a little bit
                   longer.
                 </p>
+                    <button href="#" onclick="loadShowDetails('${slug}')" class="btn btn-primary">Show details</button>
+
               </div>
             </div>
     `;
@@ -77,3 +81,15 @@ const toggleSpinner = (isLoading) => {
 document.getElementById("btn-show-all").addEventListener("click", function () {
   processSearch();
 });
+//SectioN Show details button
+
+const loadShowDetails = (id) => {
+  const url = `https://openapi.programming-hero.com/api/phone/${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayShowDetails(data.data));
+};
+const displayShowDetails = (phone) => {
+  const { brand, image, mainFeatures, name, releaseDate } = phone;
+  const { chipSet, displaySize, storage, sensors } = mainFeatures;
+};
